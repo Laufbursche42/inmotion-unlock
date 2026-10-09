@@ -1,0 +1,10 @@
+{
+  "id": "inmotion",
+  "titleFallback": "Laufbursche INMOTION Tool",
+  "sourceUrl": "https://github.com/Laufbursche42/inmotion-unlock",
+  "buildVer": 1,
+  "connectSrc": [],
+  "bodyFile": "body.html",
+  "extraScripts": [],
+  "extraDialogsFile": null
+}

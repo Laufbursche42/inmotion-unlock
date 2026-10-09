@@ -1,0 +1,132 @@
+<!-- body fragment for assemble.mjs; Content-Security-Policy is set in the assembled index.html -->
+  <p class="hint infobox" data-t="infoBannerHtml"></p>
+
+  <p class="warn" id="platform-note" data-t="platformNote" hidden></p>
+
+  <div class="card">
+    <h2 data-t="s1Title"></h2>
+    <p class="hint" data-t="sub"></p>
+    <p class="hint" data-t="startHintGuide"></p>
+    <p class="warn" data-t="expWarn"></p>
+    <p class="hint" data-t="ownDevice"></p>
+  </div>
+
+  <div class="card">
+    <h2 data-t="s2Title"></h2>
+    <div class="log-opt">
+      <span data-t="showallLabel"></span>
+      <input type="checkbox" id="showall">
+    </div>
+    <div class="set-row">
+      <label for="pin-in" data-t="pinLabel"></label>
+      <input type="text" id="pin-in" inputmode="numeric" pattern="\d{4,6}" maxlength="6" placeholder="------">
+    </div>
+    <p class="hint" data-t="pinHint"></p>
+    <div class="btns">
+      <button class="primary span2" id="btn-conn" data-t="btnConnect"></button>
+    </div>
+    <p class="hint" id="devinfo"></p>
+    <p class="hint" id="enc-state"></p>
+    <p class="hint" data-t="controlsHint"></p>
+  </div>
+
+  <div class="card" id="live-card" hidden>
+    <div class="card-head"><h2 data-t="liveTitle"></h2><button type="button" class="help-btn" data-help="live" aria-label="Info">?</button></div>
+    <p class="hint" data-t="liveLead"></p>
+    <div class="grid" id="tiles">
+      <div class="tile" id="t-transport-tile"><b id="t-transport">-</b><small data-t="tTransport"></small></div>
+      <div class="tile" id="t-mtu-tile"><b id="t-mtu">-</b><small data-t="tMtu"></small></div>
+      <div class="tile" id="t-rx-tile"><b id="t-rx">0</b><small data-t="tRx"></small></div>
+      <div class="tile" id="t-tx-tile"><b id="t-tx">0</b><small data-t="tTx"></small></div>
+    </div>
+    <h3 class="set-group" data-t="gattTitle"></h3>
+    <div class="doc-table">
+      <table id="gatt-table">
+        <thead><tr><th data-t="gattSvc"></th><th data-t="gattChar"></th><th data-t="gattProps"></th></tr></thead>
+        <tbody id="gatt-body"></tbody>
+      </table>
+    </div>
+    <p class="hint" data-t="gattHint"></p>
+  </div>
+
+  <div class="card" id="capture-card" hidden>
+    <div class="card-head"><h2 data-t="captureTitle"></h2><button type="button" class="help-btn" data-help="capture" aria-label="Info">?</button></div>
+    <p class="hint" data-t="captureLead"></p>
+    <ol class="hint">
+      <li data-t="captureStep1"></li>
+      <li data-t="captureStep2"></li>
+      <li data-t="captureStep3"></li>
+      <li data-t="captureStep4"></li>
+    </ol>
+    <div class="btns">
+      <button class="primary" id="btn-capture-start" data-t="btnCaptureStart" disabled></button>
+      <button id="btn-capture-stop" data-t="btnCaptureStop" disabled></button>
+    </div>
+    <p class="hint" id="capture-state"></p>
+    <pre id="capture-log"></pre>
+    <div class="btns">
+      <button type="button" id="btn-capture-copy" data-t="btnCaptureCopy" disabled></button>
+      <button type="button" id="btn-capture-clear" data-t="btnCaptureClear" disabled></button>
+      <button type="button" id="btn-capture-save" class="span2" data-t="btnCaptureSave" disabled></button>
+    </div>
+    <p class="hint" data-t="captureSendHint"></p>
+  </div>
+
+  <div class="card" id="pending-card">
+    <div class="card-head"><h2 data-t="pendingTitle"></h2><button type="button" class="help-btn" data-help="pending" aria-label="Info">?</button></div>
+    <p class="warn" data-t="pendingLead"></p>
+    <p class="hint" data-t="pendingSteps"></p>
+    <p class="hint" data-t="pendingClosure"></p>
+  </div>
+
+  <div class="card" id="models-card">
+    <div class="card-head"><h2 data-t="modelsTitle"></h2></div>
+    <p class="hint" data-t="modelsLead"></p>
+    <div class="doc-table">
+      <table id="models-table">
+        <thead><tr><th data-t="modelsCol1"></th><th data-t="modelsCol2"></th><th data-t="modelsCol3"></th><th data-t="modelsCol4"></th></tr></thead>
+        <tbody id="models-body"></tbody>
+      </table>
+    </div>
+    <p class="hint" data-t="modelsNote"></p>
+  </div>
+
+  <div class="card" id="raw-card" hidden>
+    <div class="card-head"><h2 data-t="expertTitle"></h2><button type="button" class="help-btn" data-help="expert" aria-label="Info">?</button></div>
+    <p class="warn" data-t="expertWarn"></p>
+    <p class="hint" data-t="expertHint"></p>
+
+    <h3 class="set-group" data-t="eRaw"></h3>
+    <div class="set-row">
+      <label for="raw-target" data-t="eRawTarget"></label>
+      <select id="raw-target"></select>
+    </div>
+    <input type="text" id="raw-hex" class="raw-in" placeholder="55 AA 06 ...">
+    <div class="btns">
+      <button id="btn-raw" data-t="btnRaw" disabled></button>
+    </div>
+    <p class="hint" data-t="eRawNote"></p>
+  </div>
+
+  <div class="card">
+    <h2 data-t="s6Title"></h2>
+    <div class="log-opts">
+      <div class="log-opt">
+        <span data-t="publicLogLabel"></span>
+        <input type="checkbox" id="public-log" checked>
+        <button type="button" class="help-btn" data-help="publiclog" aria-label="Info">?</button>
+      </div>
+      <div class="log-opt">
+        <span data-t="diagLogLabel"></span>
+        <input type="checkbox" id="diag-log">
+        <button type="button" class="help-btn" data-help="diaglog" aria-label="Info">?</button>
+      </div>
+    </div>
+    <div class="btns">
+      <button type="button" id="btn-copy-log" data-t="btnCopyLog"></button>
+      <button type="button" id="btn-clear-log" data-t="btnClearLog"></button>
+      <button type="button" id="btn-save-log" class="span2" data-t="btnSaveLog"></button>
+    </div>
+    <pre id="log"></pre>
+    <p class="hint"><span class="log-tx" data-t="logTxLegend"></span>, <span class="log-rx" data-t="logRxLegend"></span></p>
+  </div>
