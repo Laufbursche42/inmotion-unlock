@@ -491,8 +491,9 @@ function wire(){
     if (saveTextFile(logText(), name)) logSys('log saved: ' + name);
     else logErr('log save failed');
   });
-  { const pl = $('public-log'); if (pl) { pl.checked = publicLog; pl.addEventListener('change', () => { publicLog = pl.checked; try { localStorage.setItem(LS.PUBLOG, publicLog ? '1' : '0'); } catch (e) {} renderLog(); }); } }
-  { const dg = $('diag-log'); if (dg) dg.addEventListener('change', () => { diag = dg.checked; }); }
+  { const pl = $('public-log'); if (pl) { pl.checked = publicLog; pl.addEventListener('change', () => { publicLog = pl.checked; try { localStorage.setItem(LS.PUBLOG, publicLog ? '1' : '0'); } catch (e) {} logSys('public-log: ' + (pl.checked ? 'on (anonymizing device name/id)' : 'off')); renderLog(); }); } }
+  { const dg = $('diag-log'); if (dg) dg.addEventListener('change', () => { diag = dg.checked; logSys('diag-log: ' + (dg.checked ? 'on' : 'off')); }); }
+  { const sa = $('showall'); if (sa) sa.addEventListener('change', () => { logSys('show-all-frames: ' + (sa.checked ? 'on' : 'off')); renderLog(); }); }
 
   document.querySelectorAll('.help-btn').forEach(btn => btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help'))));
   ['help-x', 'help-close'].forEach(id => { const b = $(id); if (b) b.addEventListener('click', closeHelp); });
