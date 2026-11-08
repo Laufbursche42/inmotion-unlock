@@ -9,7 +9,7 @@
 //     changing the speed limit in the official app on a second device, so one capture can
 //     decode the frame layout for every model in the lorin command family,
 //   - an expert raw-write pane (user types bytes, picks a characteristic, confirms, writes).
-const BUILD = 'imu-v1';
+const BUILD = 'imu-v2';
 
 // =====================================================================================
 // INMOTION BLE transports (ground truth, from the Dart AOT constant pool of
